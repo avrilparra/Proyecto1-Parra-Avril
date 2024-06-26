@@ -1,9 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import Boton from "../componente/Boton";
+import {useNavigation}from '@react-navigation/native';
 
-export default function Register() {
+function Register() {
+  const navigation= useNavigation();
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>Registrarse</Text>
@@ -26,11 +28,13 @@ export default function Register() {
         placeholder="confirmar contraseña"      
       />
       <Boton></Boton>
-      <Text style={styles.olvidarcont}>Ya tengo una cuenta</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <Text style={styles.olvidarcont}>Ya tengo una cuenta</Text></TouchableOpacity>
       <StatusBar style="auto"/>
     </View>
   );
 }
+export default Register;
 
 const styles = StyleSheet.create({
   container: {
