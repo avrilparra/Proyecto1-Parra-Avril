@@ -13,6 +13,7 @@ export default function Register() {
         style={styles.TextInput}    
       />
       <TextInput 
+
         placeholder="email@gmail.com"  
         style={styles.TextInput}    
       />
